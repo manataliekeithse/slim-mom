@@ -1,15 +1,15 @@
-import { useState, useEffect } from "react";
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Header from './header/Header';
 
-export const App = () => {
-	const [dbData, setDbData] = useState('');
+function App() {
+  return (
+      <BrowserRouter>
+        <Header />
+        {/* Other components */}
+      </BrowserRouter>
 
-	useEffect(() => {
-		fetch("http://localhost:3500/")
-		.then(res => res.json())
-		.then(data => setDbData(data.message));
-	}, []);
-	
-	return (
-		<div>{dbData}</div>
-	)
+  );
 }
+
+export default App;
