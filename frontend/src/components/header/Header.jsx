@@ -20,29 +20,39 @@ const Header = () => {
 
       <nav className={`${css.nav} ${menuOpen ? css.open : ''}`}>
         {' '}
-        |
         {isAuthenticated ? (
           <>
-            
-              <NavLink to="/diary" activeClassName="active">
-                Diary
+            <div className={css.navItem}>
+              <NavLink
+                to="/diary"
+                className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+              >
+                | Diary
               </NavLink>
-              <NavLink to="/calculator" activeClassName="active">
+              <NavLink
+                to="/calculator"
+                className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+              >
                 Calculator
               </NavLink>
-            
+            </div>
 
             <div className={css.rightMenu}>
-              <span>{username}</span>
-              <NavLink onClick={logOut}>Exit</NavLink>
+              <span>{username}</span> |<NavLink onClick={logOut}>Exit</NavLink>
             </div>
           </>
         ) : (
           <>
-            <NavLink to="/login" activeClassName="active">
-              Log in
+            <NavLink
+              to="/login"
+              className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+            >
+              | Log in
             </NavLink>
-            <NavLink to="/registration" activeClassName="active">
+            <NavLink
+              to="/registration"
+              className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+            >
               Registration
             </NavLink>
           </>
