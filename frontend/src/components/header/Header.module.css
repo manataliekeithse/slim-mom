@@ -1,92 +1,131 @@
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px;
-    background-color: #fff;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-top: 80px;
+  margin-left: 16px;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: baseline;
 }
 
-.brand {
-    margin-left: 8px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #212121;
+.slim {
+  color: #212121;
+}
+
+.mom {
+  color: #fc842d;
 }
 
 .nav {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 25px;
+  text-transform: uppercase;
+  margin: 0px 24px;
 }
 
-.leftMenu,
-.rightMenu {
+.navItem {
     display: flex;
-    gap: 16px;
-    align-items: center;
+  align-items: flex-start;
+}
+
+.nav a {
+  color: #9b9faa;
+  display: flex;
+  align-items: flex-start;
+  font-family: Verdana;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17.01px;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+
+.rightMenu {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-right: 20px;
+  color: #9b9faa;
+  font-family: Verdana;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17.01px;
+  letter-spacing: 0.04em;
+  text-align: left;
 }
 
 .rightMenu span {
+  font-weight: bold;
+}
+
+.active {
+    color: black;
     font-weight: bold;
+    
+}
+
+.inactive {
+    color: #9B9FAA;
 }
 
 .burger {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .burgerIcon {
-    width: 25px;
-    height: 2px;
-    background-color: #333;
-    display: block;
-    position: relative;
+  width: 25px;
+  height: 2px;
+  background-color: #333;
+  display: block;
+  position: relative;
 }
 
 .burgerIcon::before,
 .burgerIcon::after {
-    content: "";
-    width: 25px;
-    height: 2px;
-    background-color: #333;
-    position: absolute;
-    left: 0;
+  content: '';
+  width: 25px;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  left: 0;
 }
 
 .burgerIcon::before {
-    top: -8px;
+  top: -8px;
 }
 
 .burgerIcon::after {
-    bottom: -8px;
+  bottom: -8px;
 }
 
 /* Tablet and Mobile Styles */
 @media (max-width: 768px) {
-    .nav {
-        display: none;
-        flex-direction: column;
-        background-color: #fff;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        padding: 16px;
-        border-top: 1px solid #ccc;
-    }
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    border-top: 1px solid #ccc;
+  }
 
-    .nav.open {
-        display: flex;
-    }
+  .nav.open {
+    display: flex;
+  }
 
-    .burger {
-        display: block;
-    }
+  .burger {
+    display: block;
+  }
 }
