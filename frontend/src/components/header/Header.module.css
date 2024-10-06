@@ -29,12 +29,6 @@
   margin: 0px 24px;
 }
 
-.navItem {
-    display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
 .nav a {
   color: #9b9faa;
   display: flex;
@@ -65,15 +59,6 @@
   font-weight: bold;
 }
 
-.active {
-    color: black;
-    font-weight: bold;
-    
-}
-
-.inactive {
-    color: #9B9FAA;
-}
 
 .burger {
   display: none;
