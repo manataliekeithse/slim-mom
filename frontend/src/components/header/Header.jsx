@@ -19,7 +19,8 @@ const Header = () => {
           <span className={css.mom}>Mom</span>
         </div>
 
-        <nav className={`${css.nav} ${menuOpen ? css.open : ''}`}>
+        {/* Desktop and Tablet Navigation */}
+        <nav className={css.nav}>
           {' '}
           {isAuthenticated ? (
             <>
@@ -55,16 +56,36 @@ const Header = () => {
         </nav>
       </div>
 
-      {isAuthenticated && (
-        <div className={css.userMenu}>
-          <span>{username}</span> |<NavLink onClick={logOut}>Exit</NavLink>
-        </div>
+      <div className={css.rightSection}>
+        {isAuthenticated ? (
+          <>
+            <span>{username}</span> |<NavLink onClick={logOut}>Exit</NavLink>
+            <button className={css.burger} onClick={toggleMenu}>
+              <span className={css.burgerIcon}></span>
+            </button>
+          </>
+        ) : null}
+      </div>
+
+      {/* Collapsible Menu for Mobile View */}
+      {isAuthenticated && menuOpen && (
+        <nav className={css.collapsibleMenu}>
+          <NavLink
+            to="/diary"
+            className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+          >
+            | Diary
+          </NavLink>
+          <NavLink
+            to="/calculator"
+            className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+          >
+            Calculator
+          </NavLink>
+        </nav>
       )}
 
-      {/* Burger icon for mobile/tablet */}
-      <button className={css.burger} onClick={toggleMenu}>
-        <span className={css.burgerIcon}></span>
-      </button>
+      
     </header>
   );
 };

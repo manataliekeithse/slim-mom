@@ -41,7 +41,7 @@
   letter-spacing: 0.04em;
 }
 
-.userMenu {
+.rightSection {
   display: flex;
   gap: 16px;
   align-items: baseline;
@@ -55,13 +55,23 @@
   letter-spacing: 0.04em;
 }
 
-.userMenu a {
+.rightSection a {
   color: #9b9faa;
 }
 
 .leftSection {
   display: flex;
   align-items: baseline;
+}
+
+.rightSection {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.rightSection a {
+  color: #9b9faa;
 }
 
 .active {
@@ -72,6 +82,7 @@
   color: #9b9faa;
 }
 
+/* Burger Menu Icon */
 .burger {
   display: none;
   background: none;
