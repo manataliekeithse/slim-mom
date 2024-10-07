@@ -38,7 +38,7 @@ const Header = () => {
               </NavLink>
             </>
           ) : (
-            <>
+            <div className={css.nav2}>
               <NavLink
                 to="/login"
                 className={({ isActive }) => (isActive ? 'active' : 'inactive')}
@@ -51,7 +51,7 @@ const Header = () => {
               >
                 Registration
               </NavLink>
-            </>
+            </div>
           )}
         </nav>
       </div>
@@ -67,7 +67,7 @@ const Header = () => {
         ) : null}
       </div>
 
-      {/* Collapsible Menu for Mobile View */}
+      {/* Collapsible Menu for Mobile View (only when logged in) */}
       {isAuthenticated && menuOpen && (
         <nav className={css.collapsibleMenu}>
           <NavLink
@@ -84,8 +84,6 @@ const Header = () => {
           </NavLink>
         </nav>
       )}
-
-      
     </header>
   );
 };
