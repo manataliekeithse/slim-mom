@@ -12,52 +12,60 @@ const Header = () => {
 
   return (
     <header className={css.header}>
-      <div className={css.logo}>
-        <img src={logo} alt="logo" />
-        <span className={css.slim}>Slim</span>
-        <span className={css.mom}>Mom</span>
+      <div className={css.leftSection}>
+        <div className={css.logo}>
+          <img src={logo} alt="logo" />
+          <span className={css.slim}>Slim</span>
+          <span className={css.mom}>Mom</span>
+        </div>
+
+        <nav className={`${css.nav} ${menuOpen ? css.open : ''}`}>
+          {' '}
+          {isAuthenticated ? (
+            <>
+            
+                <NavLink
+                  to="/diary"
+                  className={({ isActive }) =>
+                    isActive ? 'active' : 'inactive'
+                  }
+                >
+                  | Diary
+                </NavLink>
+                <NavLink
+                  to="/calculator"
+                  className={({ isActive }) =>
+                    isActive ? 'active' : 'inactive'
+                  }
+                >
+                  Calculator
+                </NavLink>
+              
+            </>
+          ) : (
+            <>
+              <NavLink
+                to="/login"
+                className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+              >
+                | Log in
+              </NavLink>
+              <NavLink
+                to="/registration"
+                className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+              >
+                Registration
+              </NavLink>
+            </>
+          )}
+        </nav>
       </div>
 
-      <nav className={`${css.nav} ${menuOpen ? css.open : ''}`}>
-        {' '}
-        {isAuthenticated ? (
-          <>
-            <div className={css.navItem}>
-              <NavLink
-                to="/diary"
-                className={({ isActive }) => (isActive ? 'active' : 'inactive')}
-              >
-                | Diary
-              </NavLink>
-              <NavLink
-                to="/calculator"
-                className={({ isActive }) => (isActive ? 'active' : 'inactive')}
-              >
-                Calculator
-              </NavLink>
-            </div>
-
-            <div className={css.rightMenu}>
-              <span>{username}</span> |<NavLink onClick={logOut}>Exit</NavLink>
-            </div>
-          </>
-        ) : (
-          <>
-            <NavLink
-              to="/login"
-              className={({ isActive }) => (isActive ? 'active' : 'inactive')}
-            >
-              | Log in
-            </NavLink>
-            <NavLink
-              to="/registration"
-              className={({ isActive }) => (isActive ? 'active' : 'inactive')}
-            >
-              Registration
-            </NavLink>
-          </>
-        )}
-      </nav>
+      {isAuthenticated && (
+        <div className={css.rightMenu}>
+          <span>{username}</span> |<NavLink onClick={logOut}>Exit</NavLink>
+        </div>
+      )}
 
       {/* Burger icon for mobile/tablet */}
       <button className={css.burger} onClick={toggleMenu}>
