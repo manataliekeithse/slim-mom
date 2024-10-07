@@ -23,24 +23,18 @@ const Header = () => {
           {' '}
           {isAuthenticated ? (
             <>
-            
-                <NavLink
-                  to="/diary"
-                  className={({ isActive }) =>
-                    isActive ? 'active' : 'inactive'
-                  }
-                >
-                  | Diary
-                </NavLink>
-                <NavLink
-                  to="/calculator"
-                  className={({ isActive }) =>
-                    isActive ? 'active' : 'inactive'
-                  }
-                >
-                  Calculator
-                </NavLink>
-              
+              <NavLink
+                to="/diary"
+                className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+              >
+                | Diary
+              </NavLink>
+              <NavLink
+                to="/calculator"
+                className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+              >
+                Calculator
+              </NavLink>
             </>
           ) : (
             <>
@@ -62,7 +56,7 @@ const Header = () => {
       </div>
 
       {isAuthenticated && (
-        <div className={css.rightMenu}>
+        <div className={css.userMenu}>
           <span>{username}</span> |<NavLink onClick={logOut}>Exit</NavLink>
         </div>
       )}

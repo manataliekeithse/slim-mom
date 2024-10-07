@@ -41,7 +41,7 @@
   letter-spacing: 0.04em;
 }
 
-.rightMenu {
+.userMenu {
   display: flex;
   gap: 16px;
   align-items: baseline;
@@ -55,7 +55,7 @@
   letter-spacing: 0.04em;
 }
 
-.rightMenu a {
+.userMenu a {
   color: #9b9faa;
 }
 
@@ -105,7 +105,7 @@
   bottom: -8px;
 }
 
-/* Tablet and Mobile Styles */
+/* Tablet Style */
 @media (max-width: 768px) {
   .nav {
     display: none;
@@ -125,5 +125,17 @@
 
   .burger {
     display: block;
+  }
+
+  .collapsibleMenu {
+    display: flex;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+  .userMenu {
+    display: inline-block;
+    align-items: flex-end;
   }
 }
