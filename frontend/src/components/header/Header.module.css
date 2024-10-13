@@ -2,23 +2,24 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  background-color: #fff;
-  margin-top: 80px;
+  margin-top: 50px;
   margin-left: 16px;
   margin-right: 20px;
 }
 
 .logo {
-  display: flex;
-  align-items: baseline;
+	position: relative;
 }
 
-.slim {
-  color: #212121;
-}
-
-.mom {
-  color: #fc842d;
+.logo::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 60%;
+	left: 108%;
+	width: 2px;
+	height: 32px;
+	background-color: var(--grey-transparent);
 }
 
 .nav {
@@ -31,7 +32,7 @@
 }
 
 .nav a {
-  color: #9b9faa;
+  color: var(--grey);
   display: flex;
   align-items: flex-start;
   font-family: Verdana;

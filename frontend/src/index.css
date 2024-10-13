@@ -3,9 +3,15 @@
 :root {
 	--black: #212121;
 	--grey: #9B9FAA;
+	--grey-transparent: #E0E0E0;
 	--orange: #FC842D;
 	--dark-blue: #264061;
 	--overlay: #2121211F;
+	--white: #ffffff
+}
+
+*:focus {
+	outline: none;
 }
 
 body {

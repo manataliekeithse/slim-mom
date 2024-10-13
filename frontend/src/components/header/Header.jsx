@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import logo from '../../images/logo.svg';
+import logo from '../../images/slim-mom logo.png';
 import css from './Header.module.css';
 import { NavLink } from 'react-router-dom';
-import { useAuth } from 'hook/useAuth';
+import { useAuth } from 'hooks/useAuth';
 
 const Header = () => {
   const { isAuthenticated, username, logOut } = useAuth();
@@ -14,9 +14,11 @@ const Header = () => {
     <header className={css.header}>
       <div className={css.leftSection}>
         <div className={css.logo}>
-          <img src={logo} alt="logo" />
-          <span className={css.slim}>Slim</span>
-          <span className={css.mom}>Mom</span>
+			 <NavLink 
+			 	to="/"
+			 > 
+          	<img src={logo} alt="logo" />
+			 </NavLink>
         </div>
 
         {/* Desktop and Tablet Navigation */}
@@ -28,7 +30,7 @@ const Header = () => {
                 to="/diary"
                 className={({ isActive }) => (isActive ? 'active' : 'inactive')}
               >
-                | Diary
+                 Diary
               </NavLink>
               <NavLink
                 to="/calculator"
@@ -43,7 +45,7 @@ const Header = () => {
                 to="/login"
                 className={({ isActive }) => (isActive ? 'active' : 'inactive')}
               >
-                | Log in
+					 Log in
               </NavLink>
               <NavLink
                 to="/registration"
