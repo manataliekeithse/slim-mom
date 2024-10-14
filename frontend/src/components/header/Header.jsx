@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { useAuth } from 'hooks/useAuth';
 
 const Header = () => {
-  const { isAuthenticated, username, logOut } = useAuth();
+  const { isLoggedIn, user } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -24,7 +24,7 @@ const Header = () => {
         {/* Desktop and Tablet Navigation */}
         <nav className={css.nav}>
           {' '}
-          {isAuthenticated ? (
+          {isLoggedIn ? (
             <>
               <NavLink
                 to="/diary"
@@ -59,9 +59,9 @@ const Header = () => {
       </div>
 
       <div className={css.rightSection}>
-        {isAuthenticated ? (
+        {isLoggedIn ? (
           <>
-            <span>{username}</span> |<NavLink onClick={logOut}>Exit</NavLink>
+            <span>{user.name}</span> |<NavLink>Exit</NavLink>
             <button className={css.burger} onClick={toggleMenu}>
               <span className={css.burgerIcon}></span>
             </button>
@@ -70,7 +70,7 @@ const Header = () => {
       </div>
 
       {/* Collapsible Menu for Mobile View (only when logged in) */}
-      {isAuthenticated && menuOpen && (
+      {isLoggedIn && menuOpen && (
         <nav className={css.collapsibleMenu}>
           <NavLink
             to="/diary"

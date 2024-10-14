@@ -1,28 +1,12 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { register } from '../../redux/authSlice';
-import { useNavigate } from 'react-router-dom';
-import './RegistrationPage.css';
 
-const RegistrationPage = () => {
+export const RegistrationPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      alert('Passwords do not match');
-      return;
-    }
-    try {
-      await dispatch(register({ email, password })).unwrap();
-      navigate('/');  // to the (HomePage)
-    } catch (error) {
-      console.error('Failed to register:', error);
-    }
   };
 
   return (
@@ -55,15 +39,3 @@ const RegistrationPage = () => {
     </div>
   );
 };
-
-export default RegistrationPage;
-
-
-
-// export const RegistrationPage = () => {
-	
-// }
-
-// export const RegistrationPage = () => {
-	
-// }
