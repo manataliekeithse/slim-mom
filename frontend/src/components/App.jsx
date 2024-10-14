@@ -5,7 +5,7 @@ import { Homepage } from 'pages/Home/Homepage';
 import { DiaryPage } from 'pages/Diary/DiaryPage';
 import { CalculatorPage } from 'pages/Calculator/CalculatorPage';
 import { LoginPage } from 'pages/Login/LoginPage';
-import { RegistrationPage } from 'pages/Registration/RegistrationPage';
+//import { RegistrationPage } from 'pages/Registration/RegistrationPage';
 import { PageNotFound } from 'pages/PageNotFound/PageNotFound';
 
 function App() {
@@ -17,7 +17,6 @@ function App() {
 				<Route path='/diary' element={ <DiaryPage />} />
 				<Route path='/calculator' element={ <CalculatorPage />} />
 				<Route path='/login' element={ <LoginPage />} />
-				<Route path='/registration' element={ <RegistrationPage />} />
 				<Route path='*' element={ <PageNotFound />} />
 			</Route>
 		</Route>
