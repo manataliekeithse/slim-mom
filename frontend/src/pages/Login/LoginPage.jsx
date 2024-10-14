@@ -4,7 +4,7 @@ import { login } from '../../redux/authSlice';
 import { useNavigate } from 'react-router-dom';
 import './LoginPage.css';
 
-const LoginPage = () => {
+export const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();

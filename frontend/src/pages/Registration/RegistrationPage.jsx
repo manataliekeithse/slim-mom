@@ -4,7 +4,7 @@ import { register } from '../../redux/authSlice';
 import { useNavigate } from 'react-router-dom';
 import './RegistrationPage.css';
 
-const RegistrationPage = () => {
+export const RegistrationPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
