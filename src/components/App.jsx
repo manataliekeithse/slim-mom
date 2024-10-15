@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { Homepage } from 'pages/Home/Homepage';
 import { DiaryPage } from 'pages/Diary/DiaryPage';
-import { CalculatorPage } from 'pages/CalculatorPageView/CalculatorPageView';
+import { CalculatorPage } from 'pages/CalculatorPage/CalculatorPage';
 import { LoginPage } from 'pages/Login/LoginPage';
 import { RegistrationPage } from 'pages/Registration/RegistrationPage';
 import { PageNotFound } from 'pages/PageNotFound/PageNotFound';
